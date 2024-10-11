@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .even {
+            color: gold; /
+        }
+        .odd {
+            color: goldenrod; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Multiplication Table Generator</h1>
+
+    <form>
+        <label for="numberInput">Enter a Number:</label>
+        <input type="number" id="numberInput" required>
+        <button type="button" onclick="generateTable()">Generate Table</button>
+    </form>
+
+    <div id="result-container">
+        <p id="result1"></p>
+        <p id="result2"></p>
+        <p id="result3"></p>
+        <p id="result4"></p>
+        <p id="result5"></p>
+        <p id="result6"></p>
+        <p id="result7"></p>
+        <p id="result8"></p>
+        <p id="result9"></p>
+        <p id="result10"></p>
+    </div>
+
+    <script>
+
+        function generateTable() {
+
+            const number = document.getElementById('numberInput').value;
+
+            if (number === "" || number <= 0) {
+                alert("Please enter a valid positive number.");
+                return;
+            }
+
+            for (let i = 1; i <= 10; i++) {
+
+                const result = number * i;
+
+                const paragraph = document.getElementById(`result${i}`);
+
+                if (result % 2 === 0) {
+                    paragraph.textContent = `${number} x ${i} = ${result} (Even)`;
+                    paragraph.className = "even"; 
+                } else {
+                    paragraph.textContent = `${number} x ${i} = ${result} (Odd)`;
+                    paragraph.className = "odd";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
