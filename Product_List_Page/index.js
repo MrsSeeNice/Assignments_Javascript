@@ -1,47 +1,48 @@
 let products = [
     {
-        name: "Laptop",
+        product: "Laptop",
         price: "$999.99",
         description: "A high performance laptop for work and gaming",
-        image: "image1.jpg"
+        image: <img src= "./images.html/image1.png" alt="Phone" width="500" />
     },
     {
-        name: "Smartphone",
+        product: "Smartphone",
         price: "$499.99",
         description: "A high performance phone with a great camera and fast processing",
-        image: "image2.jpg"
+        image: <img src="./images/phone.jpg" alt="Phone" width="500" />
     },
     {
-        name: "Headphones",
+        product: "Headphones",
         price: "$149.99",
-        description: "A high-quality headphones with noise cancellation and Bluetooth connectivity",
-        image: "image3.jpg"
-    }
+        description: "Noise cancelling headphones for immersive sound",
+        image: <img src="./images/headphones.webp" alt="Phone" width="500" />
+    },
 ];
 
-function displayProducts() {
-    const productList = document.getElementById('product-list'); // Get the product-list div
 
+function displayProducts() {
+    const productList = document.getElementById('products');
 
     productList.innerHTML = '';
 
-    products.forEach(products => {
- 
-        const productDiv = document.createElement('div');
-        const productName = document.createElement('h2');
-        const productPrice = document.createElement('p');
-        const productImage = document.createElement('img');
+    products.forEach(product => {
+        let productDiv = document.createElement('div');
+        let product = document.createElement('h2');
+        let Price = document.createElement('p');
+        let description = document.createElement('p');
+        let Image = document.createElement('img');
 
-        productName.textContent = product.name;
-        productPrice.textContent = product.price;
-        productImage.src = product.image; 
+        product.textContent = products.products;
+        Price.textContent = products.price;
+        description = products.description
+        Image.src = products.image;
 
-        productDiv.appendChild(productName);
-        productDiv.appendChild(productPrice);
-        productDiv.appendChild(productImage);
+        productDiv.appendChild(product);
+        productDiv.appendChild(price);
+        productDiv.appendChild(description);
+        productDiv.appendChild(image);
 
-        productList.appendChild(productDiv);
+        products.appendChild(productDiv);
     });
 }
-
 document.getElementById('load-products-btn').addEventListener('click', displayProducts);
