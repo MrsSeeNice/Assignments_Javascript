@@ -25,7 +25,7 @@ function displayProducts() {
 
     productList.innerHTML = '';
 
-    products.forEach(product => {
+    products.forEach(products => {
  
         const productDiv = document.createElement('div');
         const productName = document.createElement('h2');
@@ -34,7 +34,7 @@ function displayProducts() {
 
         productName.textContent = product.name;
         productPrice.textContent = product.price;
-        productImage.src = product.image; // This should be a valid image URL
+        productImage.src = product.image; 
 
         productDiv.appendChild(productName);
         productDiv.appendChild(productPrice);
